@@ -6,11 +6,9 @@ namespace DevCard_MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController()
         {
-            _logger = logger;
         }
 
         public IActionResult Index()
@@ -18,7 +16,7 @@ namespace DevCard_MVC.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+       public IActionResult Contact()
         {
             return View();
         }
