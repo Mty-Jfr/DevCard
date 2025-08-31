@@ -82,7 +82,7 @@ namespace DevCard_MVC.Controllers
         [HttpPost]
         public IActionResult Contact(Contact model)
         {
-            ModelState.Clear();
+            //ModelState.Clear();
             model.services = new SelectList(_services, "Id", "Name");
             if (!ModelState.IsValid)
             {
@@ -93,14 +93,17 @@ namespace DevCard_MVC.Controllers
             else
             {
                 ModelState.Clear();
-                ViewBag.success = "پیغام شما با موفقیت ارسال شد. باتشکر";
+            ViewBag.success = "پیغام شما با موفقیت ارسال شد. باتشکر";
                 model = new Contact
                 {
                     services = new SelectList(_services, "Id", "Name")
                 };
-                return View(model);
+                //return View(model);
+                return View(new Contact());
             }
         }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

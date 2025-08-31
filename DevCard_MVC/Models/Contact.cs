@@ -15,7 +15,7 @@ namespace DevCard_MVC.Models
 
         public string service { get; set; }
         public string message { get; set; }
-        public SelectList services { get; set; }
+        public SelectList? services { get; set; }
 
     }
 }
